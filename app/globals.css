@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body {
+  @apply font-body font-semibold text-mochi-ink antialiased;
+  background-color: #fff9f3;
+  background-image:
+    radial-gradient(circle at 1px 1px, #ffd9c7 1.5px, transparent 1.7px),
+    radial-gradient(700px 400px at 100% 0%, rgba(201,182,255,.25), transparent 60%),
+    radial-gradient(600px 400px at 0% 100%, rgba(174,232,210,.3), transparent 60%);
+  background-size: 28px 28px, auto, auto;
+  background-attachment: fixed;
+}
+h1, h2, h3, h4 { @apply font-display font-bold; }
+::selection { background: #ffd0e2; }
+
+@layer components {
+  .card { @apply rounded-[28px] border-2 border-mochi-line bg-white shadow-soft; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-mochi-ink/10 px-5 py-2.5 text-sm font-bold transition active:translate-y-0.5; }
+  .btn-peach { @apply btn bg-mochi-peach text-mochi-ink shadow-pop hover:brightness-105; }
+  .btn-lav { @apply btn bg-mochi-lav text-mochi-ink shadow-pop hover:brightness-105; }
+  .btn-ghost { @apply btn bg-white text-mochi-ink hover:bg-mochi-cream; }
+  .input { @apply w-full rounded-2xl border-2 border-mochi-line bg-mochi-cream px-4 py-2.5 text-sm outline-none transition placeholder:text-mochi-muted/70 focus:border-mochi-peach focus:bg-white focus:ring-4 focus:ring-mochi-peach/20; }
+  .lbl { @apply mb-1 block text-xs font-extrabold uppercase tracking-wider text-mochi-muted; }
+  .chip { @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-extrabold; }
+}
